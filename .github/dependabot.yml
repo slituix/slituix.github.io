@@ -1,0 +1,73 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "04:00"
+      timezone: "Asia/Kolkata"
+    groups:
+      next-core:
+        patterns:
+          - "next"
+          - "react"
+          - "react-dom"
+          - "eslint*"
+          - "@next/*"
+          - "typescript"
+        update-types:
+          - minor
+          - patch
+          - major
+      tooling:
+        patterns:
+          - "@types/*"
+          - "prettier*"
+          - "lint*"
+          - "eslint-*"
+          - "vitest*"
+          - "jest*"
+          - "ts-*"
+          - "*config*"
+        update-types:
+          - minor
+          - patch
+          - major
+      all-others:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "next"
+          - "react"
+          - "react-dom"
+          - "@next/*"
+        update-types:
+          - minor
+          - patch
+          - major
+      security-batch:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: all
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "04:30"
+      timezone: "Asia/Kolkata"
+    groups:
+      actions-core:
+        patterns:
+          - "actions/*"
+          - "github/*"
+          - "gradle/*"
+          - "*-action"
+      security-batch:
+        applies-to: security-updates
+        patterns:
+          - "*"
