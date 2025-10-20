@@ -5,7 +5,6 @@ updates:
     directory: "/"
     schedule:
       interval: daily
-      time: "04:00"
       timezone: "Asia/Kolkata"
     groups:
       next-core:
@@ -56,9 +55,7 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: weekly
-      day: monday
-      time: "04:30"
+      interval: daily
       timezone: "Asia/Kolkata"
     groups:
       actions-core:
