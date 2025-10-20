@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   // You can add more Next.js configuration here
   reactStrictMode: true,
-  swcMinify: true,
 }
 
 // Export configuration wrapped with MDX
