@@ -1,0 +1,99 @@
+name: Init Next.js
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_dir:
+        description: Folder to create the app in (e.g., app)
+        required: true
+        default: app
+      package_manager:
+        description: npm | pnpm | yarn | bun
+        required: true
+        default: pnpm
+
+permissions:
+  contents: write
+
+jobs:
+  create_next_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Determine package manager flags
+        id: pm
+        run: |
+          case "${{ github.event.inputs.package_manager || 'pnpm' }}" in
+            npm)  echo "flag=--use-npm"  >> "$GITHUB_OUTPUT" ;;
+            pnpm) echo "flag=--use-pnpm" >> "$GITHUB_OUTPUT" ;;
+            yarn) echo "flag=--use-yarn" >> "$GITHUB_OUTPUT" ;;
+            bun)  echo "flag=--use-bun"  >> "$GITHUB_OUTPUT" ;;
+            *)    echo "flag=--use-pnpm" >> "$GITHUB_OUTPUT" ;;
+          esac
+
+      - name: Install chosen package manager
+        run: |
+          PM="${{ github.event.inputs.package_manager || 'pnpm' }}"
+          if [ "$PM" = "pnpm" ]; then
+            corepack enable
+            corepack prepare pnpm@latest --activate
+          elif [ "$PM" = "yarn" ]; then
+            corepack enable
+            corepack prepare yarn@stable --activate
+          elif [ "$PM" = "bun" ]; then
+            curl -fsSL https://bun.sh/install | bash
+            echo "$HOME/.bun/bin" >> $GITHUB_PATH
+          fi
+
+      - name: Create Next.js app (non-interactive)
+        env:
+          APP_DIR: ${{ github.event.inputs.app_dir || 'app' }}
+          PM_FLAG: ${{ steps.pm.outputs.flag }}
+        run: |
+          if [ -d "$APP_DIR" ] && [ "$(ls -A "$APP_DIR")" ]; then
+            echo "Target directory '$APP_DIR' is not empty; skipping create-next-app."
+            exit 0
+          fi
+
+          npx --yes create-next-app@latest "$APP_DIR" \
+            --ts \
+            --tailwind \
+            --eslint \
+            --app \
+            --src-dir \
+            --import-alias "@/*" \
+            $PM_FLAG \
+            --no-reset-preferences
+
+      - name: Format and install
+        if: success()
+        env:
+          APP_DIR: ${{ github.event.inputs.app_dir || 'app' }}
+        run: |
+          cd "$APP_DIR"
+          if [ -f pnpm-lock.yaml ]; then pnpm install; fi
+          if [ -f package-lock.json ] && [ ! -f pnpm-lock.yaml ]; then npm ci; fi
+          if [ -f yarn.lock ] && [ ! -f pnpm-lock.yaml ]; then yarn install --immutable || yarn install; fi
+          if command -v bun >/dev/null 2>&1; then bun install || true; fi
+          npx prettier -w . || true
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: scaffold Next.js app via create-next-app"
+          git push
