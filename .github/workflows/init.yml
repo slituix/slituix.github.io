@@ -36,8 +36,10 @@ jobs:
             curl -fsSL https://bun.sh/install | bash
             echo "$HOME/.bun/bin" >> $GITHUB_PATH
           fi
-
-      - name: Build Next.js Site
+      - name: install dependency
+        run: |
+          pnpm install
+      - name: build nextjs site
         run: |
           pnpm run build
 
