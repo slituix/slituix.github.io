@@ -13,7 +13,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-[#F5F1E8] via-[#FAF8F3] to-[#F0EBE0] dark:from-[#1A1816] dark:via-[#0F0E0D] dark:to-[#1A1816]">
+    <div className="min-h-screen bg-linear-to-br from-[#F5F1E8] via-[#FAF8F3] to-[#F0EBE0] dark:from-background dark:via-[#0F0E0D] dark:to-background">
       <div className="grow">
         <div className="max-w-4xl mx-auto px-6 py-20 sm:px-8 sm:py-32">
           {/* Header */}
@@ -24,7 +24,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-sans font-bold text-[#2D2420] dark:text-[#E8DFD4] mb-6 leading-none">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-sans font-bold text-primary-foreground dark:text-[#E8DFD4] mb-6 leading-none">
               @2f1b08e
             </h1>
 
@@ -40,7 +40,7 @@ export default function HomePage() {
                 href="https://github.com/2f1b08e"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-5 py-3 bg-[#2D2420] dark:bg-[#E8DFD4] text-[#F5F1E8] dark:text-[#2D2420] rounded-full hover:bg-[#3D342F] dark:hover:bg-[#D4C7B8] transition-all duration-200 hover:scale-105"
+                className="group flex items-center gap-2 px-5 py-3 bg-primary-foreground dark:bg-[#E8DFD4] text-[#F5F1E8] dark:text-primary- rounded-full hover:bg-[#3D342F] dark:hover:bg-[#D4C7B8] transition-all duration-200 hover:scale-105"
               >
                 <Github className="w-5 h-5" />
                 <span className="font-sans font-medium">GitHub</span>
@@ -50,7 +50,7 @@ export default function HomePage() {
                 href="https://x.com/2f1b08e"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-5 py-3 bg-[#E8DFD4] dark:bg-[#2A2522] text-[#2D2420] dark:text-[#E8DFD4] rounded-full hover:bg-[#D4C7B8] dark:hover:bg-[#3D342F] transition-all duration-200 hover:scale-105"
+                className="group flex items-center gap-2 px-5 py-3 bg-[#E8DFD4] dark:bg-[#2A2522] text-primary-foreground dark:text-[#E8DFD4] rounded-full hover:bg-[#D4C7B8] dark:hover:bg-[#3D342F] transition-all duration-200 hover:scale-105"
               >
                 <Twitter className="w-5 h-5" />
                 <span className="font-sans font-medium">X (Twitter)</span>
@@ -68,10 +68,10 @@ export default function HomePage() {
               {skills.map((skill, index) => (
                 <div
                   key={skill}
-                  className="group relative px-4 py-4 bg-[#FDFCFA] dark:bg-[#211E1C] rounded-xl border border-[#E8DFD4] dark:border-[#2A2522] hover:border-[#C4B5A6] dark:hover:border-[#3D342F] transition-all duration-200 hover:shadow-lg hover:shadow-[#8B7355]/5 dark:hover:shadow-[#E8DFD4]/5"
+                  className="group relative px-4 py-4 bg-[#FDFCFA] dark:bg-card rounded-xl border border-[#E8DFD4] dark:border-[#2A2522] hover:border-[#C4B5A6] dark:hover:border-[#3D342F] transition-all duration-200 hover:shadow-lg hover:shadow-[#8B7355]/5 dark:hover:shadow-[#E8DFD4]/5"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <span className="text-[#2D2420] dark:text-[#E8DFD4] font-medium text-base">
+                  <span className="text-primary-foreground dark:text-[#E8DFD4] font-medium text-base">
                     {skill}
                   </span>
                 </div>
@@ -85,7 +85,7 @@ export default function HomePage() {
               ABOUT ME
             </h2>
 
-            <div className="bg-[#FDFCFA] dark:bg-[#211E1C] rounded-2xl border border-[#E8DFD4] dark:border-[#2A2522] p-8 sm:p-10 shadow-xl shadow-[#8B7355]/5 dark:shadow-[#E8DFD4]/5">
+            <div className="bg-[#FDFCFA] dark:bg-card rounded-2xl border border-[#E8DFD4] dark:border-[#2A2522] p-8 sm:p-10 shadow-xl shadow-[#8B7355]/5 dark:shadow-[#E8DFD4]/5">
               <p className="text-lg text-[#5C4E42] dark:text-[#C4B5A6] leading-relaxed mb-4">
                 I&apos;m a developer who loves the intersection of design and code. My
                 focus is on creating interfaces that are not only functional but
