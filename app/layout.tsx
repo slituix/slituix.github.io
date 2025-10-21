@@ -17,27 +17,42 @@ const crimsonPro = Crimson_Pro({
 
 export const metadata: Metadata = {
   title: "@2f1b08e | Developer & Designer",
-  description: "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
-  keywords: ["developer", "designer", "nextjs", "react", "typescript", "kotlin", "rust"],
+  description:
+    "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
+  keywords: [
+    "developer",
+    "designer",
+    "nextjs",
+    "react",
+    "typescript",
+    "kotlin",
+    "rust",
+  ],
   authors: [{ name: "@2f1b08e" }],
   creator: "@2f1b08e",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yourdomain.com",
+    url: "https://2f2f1b08e.vercel.app",
     title: "@2f1b08e | Developer & Designer",
-    description: "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
+    description:
+      "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
     siteName: "@2f1b08e Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "@2f1b08e | Developer & Designer",
-    description: "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
-    creator: "@real2f1b08e",
+    description:
+      "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
+    creator: "@2f1b08e",
   },
   robots: {
     index: true,
     follow: true,
+  },
+
+  appleWebApp: {
+    title: "2f1b08e",
   },
 };
 
@@ -47,7 +62,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${crimsonPro.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${crimsonPro.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-serif antialiased">
         <ThemeProvider
           attribute="class"

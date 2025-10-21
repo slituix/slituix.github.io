@@ -1,5 +1,4 @@
-import { Github, Twitter } from "lucide-react";
-import { ModeToggle } from "@/components/theme-toggle";
+import { Github, Twitter } from "lucide-react"
 
 export default function HomePage() {
   const skills = [
@@ -15,11 +14,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-[#F5F1E8] via-[#FAF8F3] to-[#F0EBE0] dark:from-[#1A1816] dark:via-[#0F0E0D] dark:to-[#1A1816]">
-      {/* Theme Toggle - Fixed Position */}
-      <div className="fixed top-6 right-6 z-50">
-        <ModeToggle />
-      </div>
-
       <div className="grow">
         <div className="max-w-4xl mx-auto px-6 py-20 sm:px-8 sm:py-32">
           {/* Header */}
