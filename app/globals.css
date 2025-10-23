@@ -86,5 +86,15 @@
   ::-moz-selection {
     background-color: #3d3935;
     color: #faf8f5;
+@keyframes gradient-move {
+    0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      }
+
+      .animate-gradient {
+        background-size: 200% 200%;
+          animation: gradient-move 6s ease infinite;
+          }
+  }
   }
 }
