@@ -4,12 +4,14 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
   
+  // Image optimization
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
+  // Headers for security and performance
   async headers() {
     return [
       {
@@ -45,20 +47,24 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // Redirects
   async redirects() {
-    return [];
+    return [
+      // Add your custom redirects here
+    ];
   },
 
+  // Experimental features for Next.js 16
   experimental: {
     optimizePackageImports: ["lucide-react"],
+    scrollRestoration: true,
   },
 
+  // TypeScript and ESLint
   typescript: {
     ignoreBuildErrors: false,
   },
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
+  
 };
 
 export default nextConfig;

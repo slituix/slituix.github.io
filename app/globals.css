@@ -1,36 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #F5F1E8;
-  --color-foreground: #2D2420;
-  --color-card: #FDFCFA;
-  --color-card-foreground: #2D2420;
-  --color-primary: #2D2420;
-  --color-primary-foreground: #F5F1E8;
-  --color-secondary: #E8DFD4;
-  --color-secondary-foreground: #2D2420;
-  --color-muted: #E8DFD4;
-  --color-muted-foreground: #8B7355;
-  --color-accent: #E8DFD4;
-  --color-accent-foreground: #2D2420;
-  --color-border: #E8DFD4;
-  --color-input: #E8DFD4;
-  --color-ring: #2D2420;
+  --color-background: #faf8f5;
+  --color-foreground: #1a1816;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1816;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1816;
+  --color-primary: #1a1816;
+  --color-primary-foreground: #faf8f5;
+  --color-secondary: #f5f1ea;
+  --color-secondary-foreground: #1a1816;
+  --color-muted: #f5f1ea;
+  --color-muted-foreground: #6b6661;
+  --color-accent: #f5f1ea;
+  --color-accent-foreground: #1a1816;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #faf8f5;
+  --color-border: #e8e3db;
+  --color-input: #e8e3db;
+  --color-ring: #1a1816;
+  --radius: 0.75rem;
   
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: var(--font-crimson), ui-serif, Georgia, serif;
 }
 
 @layer base {
-  /* Text Selection Colors */
+  /* Text Selection Colors - matching accent */
   ::selection {
-    background-color: #C4B5A6;
-    color: #2D2420;
+    background-color: #d4cec1;
+    color: #1a1816;
   }
   
   ::-moz-selection {
-    background-color: #C4B5A6;
-    color: #2D2420;
+    background-color: #d4cec1;
+    color: #1a1816;
   }
   
   body {
@@ -51,31 +56,35 @@
 
 @media (prefers-color-scheme: dark) {
   @theme {
-    --color-background: #1A1816;
-    --color-foreground: #E8DFD4;
-    --color-card: #211E1C;
-    --color-card-foreground: #E8DFD4;
-    --color-primary: #E8DFD4;
-    --color-primary-foreground: #2D2420;
-    --color-secondary: #2A2522;
-    --color-secondary-foreground: #E8DFD4;
-    --color-muted: #2A2522;
-    --color-muted-foreground: #B4A192;
-    --color-accent: #2A2522;
-    --color-accent-foreground: #E8DFD4;
-    --color-border: #2A2522;
-    --color-input: #2A2522;
-    --color-ring: #B4A192;
+    --color-background: #0a0908;
+    --color-foreground: #faf8f5;
+    --color-card: #1a1816;
+    --color-card-foreground: #faf8f5;
+    --color-popover: #1a1816;
+    --color-popover-foreground: #faf8f5;
+    --color-primary: #faf8f5;
+    --color-primary-foreground: #1a1816;
+    --color-secondary: #2a2522;
+    --color-secondary-foreground: #faf8f5;
+    --color-muted: #2a2522;
+    --color-muted-foreground: #a8a29e;
+    --color-accent: #2a2522;
+    --color-accent-foreground: #faf8f5;
+    --color-destructive: #ef4444;
+    --color-destructive-foreground: #faf8f5;
+    --color-border: #2a2522;
+    --color-input: #2a2522;
+    --color-ring: #d4cec1;
   }
   
   /* Dark Mode Text Selection */
   ::selection {
-    background-color: #5C4E42;
-    color: #E8DFD4;
+    background-color: #3d3935;
+    color: #faf8f5;
   }
   
   ::-moz-selection {
-    background-color: #5C4E42;
-    color: #E8DFD4;
+    background-color: #3d3935;
+    color: #faf8f5;
   }
 }
