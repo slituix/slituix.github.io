@@ -52,19 +52,3 @@ updates:
     open-pull-requests-limit: 10
     allow:
       - dependency-type: all
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: daily
-      timezone: "Asia/Kolkata"
-    groups:
-      actions-core:
-        patterns:
-          - "actions/*"
-          - "github/*"
-          - "gradle/*"
-          - "*-action"
-      security-batch:
-        applies-to: security-updates
-        patterns:
-          - "*"
