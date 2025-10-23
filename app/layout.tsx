@@ -25,23 +25,38 @@ export const metadata: Metadata = {
   authors: [{ name: "Saksham", url: "https://github.com/slituix" }],
   creator: "Saksham",
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "slituix.vercel.app",
-    title: "Saksham | Developer & Designer",
-    description: "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
-    siteName: "Saksham Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Saksham | Developer & Designer",
-    description: "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
-    creator: "@_slituix",
-    site: "@_slituix",
+    title: 'Saksham | Developer & Designer',
+    description: 'I craft beautiful user interfaces and build elegant web experiences with modern technologies',
+    url: 'https://slituix.vercel.app',
+    siteName: 'Saksham Portfolio',
+    images: [
+      {
+        url: 'https://slituix.vercel.app/icon0.svg', // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://slituix.vercel.app/icon1.png', // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+        alt: 'alt image',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
