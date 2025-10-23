@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://2f2f1b08e.vercel.app",
+    url: "https://2f1b08e.vercel.app",
     title: "@2f1b08e | Developer & Designer",
     description:
       "I craft beautiful user interfaces and build elegant web experiences with modern technologies.",
