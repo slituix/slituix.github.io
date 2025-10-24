@@ -2,21 +2,9 @@
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from "next";
-import { Inter, Crimson_Pro } from "next/font/google";
+import { sfPro } from './fonts';
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const crimsonPro = Crimson_Pro({
-  subsets: ["latin"],
-  variable: "--font-crimson",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Saksham | Developer & Designer",
@@ -66,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${crimsonPro.variable}`} suppressHydrationWarning>
+    <html lang="en" className={sfPro.className} suppressHydrationWarning>
       <body className="font-serif antialiased">
         <ThemeProvider
           attribute="class"
