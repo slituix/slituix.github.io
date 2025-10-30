@@ -2,7 +2,8 @@
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from "next";
-import { sfPro } from './fonts';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -54,8 +55,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={sfPro.className} suppressHydrationWarning>
-      <body className="font-serif antialiased">
+    <html lang="en" className={GeistMono.className} suppressHydrationWarning>
+      <body className="antialiased font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

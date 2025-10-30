@@ -92,12 +92,12 @@ export default function HomePage() {
         {/* Header */}
         <header className="mb-24">
           <div className="inline-block mb-6">
-            <span className="text-sm font-sans font-medium text-muted-foreground tracking-wide uppercase">
+            <span className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
               Developer & Designer
             </span>
           </div>
 
-          <h1 className="text-6xl sm:text-7xl md:text-8xl font-sans font-bold text-foreground mb-8 leading-none tracking-tight">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-8 leading-none tracking-tight">
             Saksham
           </h1>
 
@@ -113,7 +113,7 @@ export default function HomePage() {
               href="https://github.com/slituix"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-all duration-200 hover:scale-105 font-sans font-medium text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-all duration-200 hover:scale-105 font-medium text-sm"
             >
               <Github className="w-4 h-4" />
               <span>GitHub</span>
@@ -124,7 +124,7 @@ export default function HomePage() {
               href="https://x.com/_slituix"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-full hover:bg-secondary/80 transition-all duration-200 hover:scale-105 font-sans font-medium text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-full hover:bg-secondary/80 transition-all duration-200 hover:scale-105 font-medium text-sm"
             >
               <Twitter className="w-4 h-4" />
               <span>Twitter</span>
@@ -133,7 +133,7 @@ export default function HomePage() {
 
             <a
               href="mailto:hello@example.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/80 transition-all duration-200 hover:scale-105 font-sans font-medium text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-full hover:bg-accent/80 transition-all duration-200 hover:scale-105 font-medium text-sm"
             >
               <Mail className="w-4 h-4" />
               <span>Contact</span>
@@ -143,7 +143,7 @@ export default function HomePage() {
 
         {/* Skills Section */}
         <section className="mb-24">
-          <h2 className="text-sm font-sans font-medium text-muted-foreground tracking-wide mb-8 uppercase">
+          <h2 className="text-sm font-medium text-muted-foreground tracking-wide mb-8 uppercase">
             Skills & Technologies
           </h2>
 
@@ -161,7 +161,7 @@ export default function HomePage() {
                     {skill.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-sans font-semibold text-foreground mb-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-1">
                       {skill.name}
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -176,7 +176,7 @@ export default function HomePage() {
 
         {/* About Section */}
         <section className="mb-24">
-          <h2 className="text-sm font-sans font-medium text-muted-foreground tracking-wide mb-8 uppercase">
+          <h2 className="text-sm font-medium text-muted-foreground tracking-wide mb-8 uppercase">
             About Me
           </h2>
 
